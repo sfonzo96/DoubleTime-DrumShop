@@ -2,7 +2,7 @@ import React from "react";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import './cart.css'
 
-function Cart() {
+function CartWidget() {
     return (
         <div className="cartContainer">
             <ShoppingCartIcon />
@@ -11,4 +11,4 @@ function Cart() {
     )
 }
 
-export default Cart
+export default CartWidget

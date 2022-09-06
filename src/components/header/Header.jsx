@@ -1,6 +1,6 @@
 import React from "react";
 import logo from '../../assets/logo.png';
-import Cart from '../cart/Cart';
+import CartWidget from '../cart/Cart';
 import NavUl from "../navul/NavUl";
 import './header.css'
 
@@ -10,7 +10,7 @@ function Header() {
             <header>
                 <img src={logo} alt="logo" />
                 <NavUl />
-                <Cart />
+                <CartWidget />
             </header>
         </>
     )
