@@ -1,0 +1,40 @@
+header nav ul {
+    display: flex;
+    list-style: none;
+    text-decoration: none;
+    gap: 1.25rem;
+    text-transform: uppercase;
+    font-weight: bold;
+
+    li {
+        cursor: pointer;
+        width: 7.2rem;
+        font-size: 1.4rem;
+        display: flex;
+        justify-content: center;
+
+        a {
+            text-decoration: none;
+            padding: 0 .5rem;
+            color: black;
+            text-align: center;
+            position: relative;
+
+            &::after {
+                content: "";
+                height: .2rem;
+                position: absolute;
+                width: 0;
+                left: 50%;
+                top: 2rem;
+                background-color: gray;
+                transition: width ease 300ms;
+                transform: translate(-50%, 0);
+            }
+
+            &:hover::after{
+                width: 100%;
+            }
+        }
+    }
+}

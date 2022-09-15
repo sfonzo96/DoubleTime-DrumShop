@@ -1,5 +1,5 @@
 import React from "react";
-import './navul.css'
+import './navul.scss'
 
 function NavUl() {
     return (

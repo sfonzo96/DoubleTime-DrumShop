@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
-import './itemCounter.css'
+import './itemCounter.scss'
 
 function ItemCounter({initialAmount, stockAmount, onAdd}) {
     const [counter, setCounter] = useState(initialAmount);
@@ -17,7 +17,7 @@ function ItemCounter({initialAmount, stockAmount, onAdd}) {
     return (
         <div className="counterContainer">
             <div className="upperCounter">
-                <button className="minus1Btn" onClick={minus1} disabled={counter <= initialAmount}><RemoveCircleIcon/></button>
+                <button className="minus1Btn" onClick={minus1} disabled={counter === initialAmount}><RemoveCircleIcon/></button>
                 <div className="counterShow">{counter}</div>
                 <button className="plus1Btn" onClick={plus1} disabled={counter === stockAmount}><AddCircleIcon/></button>
             </div>

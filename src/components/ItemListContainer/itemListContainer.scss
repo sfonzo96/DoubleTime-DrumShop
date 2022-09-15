@@ -1,0 +1,20 @@
+.sampleTitle {
+    text-align: center;
+    font-size: 5rem;
+    color: darkolivegreen;
+}
+
+.itemListContainer {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    border-radius: 2rem;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+

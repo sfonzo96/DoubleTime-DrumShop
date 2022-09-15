@@ -1,13 +1,13 @@
 import React from "react";
-import './App.css';
-import Header from "./components/header/Header";
-import ItemListContainer from './components/itemListContainer/ItemListContainer'
+import './App.scss';
+import Header from "./components/Header";
+import ItemListContainer from './components/ItemListContainer'
 
 function App() {
   return (
     <>
       <Header />
-      <ItemListContainer greetings='Acá estarían los productos'/>
+      <ItemListContainer greetings='Productos'/>
     </>
   );
 }
