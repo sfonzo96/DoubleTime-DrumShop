@@ -13,8 +13,8 @@ function ItemDetail({product}) {
                 <img src={product.image} alt="" />
                 <div className="descriptDiv">
                     <h2>{product.title}</h2>
-                    <p className="productModalPrice">{'$ ' + product.price}</p>
-                    <p className="productModalDescript">{product.description}</p>
+                    <p>{'$ ' + product.price}</p>
+                    <p>{product.description}</p>
                     <button className="addBtn" id='addBtn'> Add to cart</button>
                 </div> 
             </div>
