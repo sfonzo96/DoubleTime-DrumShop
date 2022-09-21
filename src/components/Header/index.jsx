@@ -2,9 +2,9 @@ import React from "react";
 import logo from '../../assets/logo.png';
 import CartWidget from '../Cart/';
 import NavUl from "../NavUl";
-import './header.scss'
+import './Header.scss'
 
-function Header() {
+export function Header() {
     return (
         <>
             <header>
@@ -15,5 +15,3 @@ function Header() {
         </>
     )
 }
-
-export default Header

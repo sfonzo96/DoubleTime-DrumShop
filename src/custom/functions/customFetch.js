@@ -4,4 +4,4 @@ function customFetch(items) {
     })
 }
 
-export default customFetch;
+export {customFetch};

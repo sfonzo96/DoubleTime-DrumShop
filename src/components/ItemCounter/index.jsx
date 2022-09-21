@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
-import './itemCounter.scss'
+import './ItemCounter.scss'
 
 function ItemCounter({initialAmount, stockAmount, onAdd}) {
     const [counter, setCounter] = useState(initialAmount);

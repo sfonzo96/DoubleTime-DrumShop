@@ -1,6 +1,5 @@
-import { listClasses } from "@mui/material";
 import React from "react"
-import Item from '../Item';
+import { Item } from '../Item';
 
 export default function ItemList({productsList}) {
     return (

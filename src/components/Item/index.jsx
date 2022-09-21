@@ -1,12 +1,12 @@
 import React from "react";
-import './item.scss'
+import './Item.scss'
 
-export default function Item({product}) {
+export function Item({product}) {
     return (
         <div className="card">
             <img src={product.image} alt=""/>
             <h3>{product.title}</h3>
-            <p>{product.description}</p>
+            <button className="seeMore">Ver más</button>
         </div>
     )
 }

@@ -1,0 +1,46 @@
+.itemDetailContent {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    outline: .1rem solid black;
+    border-radius: 2rem;
+    margin-bottom: 2rem; //provisorio par que no quede pegado al fondo del html
+    .goBackDiv {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        padding: 1rem 1rem;
+        font-size: 1.6rem;
+        border-bottom: .1rem solid black;
+
+        svg {
+            font-size: 2rem;
+        }
+    }
+
+    .detailBottomDiv {
+        display: flex;
+        justify-content: space-around;
+
+        img {
+            width: 50%;
+            filter: drop-shadow(0 0 .5rem grey);
+            border-right: .1rem solid black;
+        }
+
+        .descriptDiv {
+            width: 40%;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: center;
+
+            .addBtn {
+                width: 15rem;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
