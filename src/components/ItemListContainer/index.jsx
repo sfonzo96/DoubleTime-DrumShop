@@ -2,14 +2,14 @@ import React, { useState, useEffect } from "react";
 import './ItemListContainer.scss'
 import ItemList from "../ItemList";
 import { cymbals } from '../../assets/cymbals';
-import {customFetch} from "../../custom/functions/customFetch";
+import { customFetch } from "../../utils/functions/customFetch";
 import { CircularProgress, Backdrop } from '@mui/material/';
-/* import ItemCounter from "../ItemCounter/"; */
+import { useParams } from 'react-router-dom';
+import { prettyNameFromType } from '../../utils/functions/prettyNameFromType';
 
-export function ItemListContainer({greetings}) {
-/*     const onAdd = (amount) => {
-        alert(`Agregaste ${amount} productoX al carrito`)
-    } */
+export function ItemListContainer() {
+    
+    const {typeId} = useParams();
 
     const [productsList, setProductsList] = useState([]);
 
@@ -22,14 +22,16 @@ export function ItemListContainer({greetings}) {
     useEffect(() => {
         customFetch(cymbals)
             .then(res => {
-                setProductsList(res); 
+                if (typeId) {
+                    setProductsList(res.filter((product) => product.type === typeId))
+                } else setProductsList(res); 
                 handleClose();
             })
-    }, []);
+    }, [typeId]);
 
     return (
         <>
-            <h1 className='sampleTitle'>{greetings}</h1>
+            <h1 className='listTitle'>{prettyNameFromType(typeId).toUpperCase()}</h1>
             <div className="itemListContainer">
                 {open?
                     <Backdrop
@@ -42,7 +44,6 @@ export function ItemListContainer({greetings}) {
                 :
                     <ItemList productsList={productsList}/>
                 }
-                {/* <ItemCounter stockAmount={9} onAdd={onAdd} initialAmount={1}/> */}
             </div>
         </>
     )

@@ -2,39 +2,50 @@
     display: flex;
     flex-direction: column;
     width: 80%;
-    outline: .1rem solid black;
-    border-radius: 2rem;
-    margin-bottom: 2rem; //provisorio par que no quede pegado al fondo del html
+    
     .goBackDiv {
-        display: flex;
-        gap: 1rem;
-        align-items: center;
-        padding: 1rem 1rem;
-        font-size: 1.6rem;
-        border-bottom: .1rem solid black;
+        width: 100%;
 
-        svg {
-            font-size: 2rem;
+        a {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            padding: 1rem 1rem;
+            font-size: 1.6rem;
+            width: max-content;
+    
+            svg {
+                font-size: 2rem;
+            }
         }
     }
 
     .detailBottomDiv {
         display: flex;
         justify-content: space-around;
+        align-items: center;
+        padding: 0 2rem;
 
         img {
             width: 50%;
             filter: drop-shadow(0 0 .5rem grey);
-            border-right: .1rem solid black;
         }
 
         .descriptDiv {
-            width: 40%;
-            padding: 2rem;
             display: flex;
             flex-direction: column;
-            gap: 2rem;
             align-items: center;
+            gap: 5rem;
+            font-size: 1.8rem;
+            width: 40%;
+            padding: 2rem;
+            height: 100%;
+
+            h2 {
+                font-size: 3.2rem;
+                text-transform: uppercase;
+                text-align: center;
+            }
 
             .addBtn {
                 width: 15rem;

@@ -8,14 +8,14 @@ header nav ul {
 
     li {
         cursor: pointer;
-        width: 7.2rem;
+        width: 11rem;
         font-size: 1.4rem;
         display: flex;
         justify-content: center;
 
         a {
             text-decoration: none;
-            padding: 0 .5rem;
+            width: max-content;
             color: black;
             text-align: center;
             position: relative;
