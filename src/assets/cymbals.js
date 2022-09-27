@@ -8,7 +8,7 @@ export const cymbals = [
         type: 'fxcymbs',
         description: `Monstrous, explosive FX cymbal that delivers booming trash crashes, dry stick sound, and a broad sustain rich with dark, exotic overtones.`,
         price: 100,
-        stock: 1,
+        stock: 4,
     },
     {
         id: 3,
@@ -30,7 +30,7 @@ export const cymbals = [
         type: 'hihats',
         description: `Light, crisp, subtle, very colorful. Delicate stick sound with clean "chick".`,
         price: 100,
-        stock: 1,
+        stock: 2,
     },
     {
         id: 4,
@@ -52,7 +52,7 @@ export const cymbals = [
         type: 'hihats',
         description: `Based on requests from players for a lighter weight version of our heralded K Hi-Hats, these K Light Hi-Hats have a medium thin top paired with a medium bottom to give them a dark and slightly delicate feel with a light blend of overtones. Good for most applications including rock, pop, country, and jazz.`,
         price: 100,
-        stock: 1,
+        stock: 8,
     },
     {
         id: 6,
@@ -63,7 +63,7 @@ export const cymbals = [
         type: 'crashes',
         description: `K Custom Special Dry are the original dry cymbal remastered for today's modern musical styles. These raw and earthy cymbals deliver a dry, funky sound with a quick fast attack, lots of dirt, yet shuts down quickly for a powerful expression of personality.`,
         price: 100,
-        stock: 1,
+        stock: 3,
     },
     {
         id: 7,
@@ -74,6 +74,6 @@ export const cymbals = [
         type: 'hihats',
         description: `K Sweet Hi-Hats take the traditional K sound and brings it in an alternative direction with fresh tonal colors.`,
         price: 100,
-        stock: 1,
+        stock: 5,
     },
 ]

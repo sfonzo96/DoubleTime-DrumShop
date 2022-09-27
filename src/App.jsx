@@ -4,7 +4,7 @@ import { Header } from './components/Header';
 import { ItemDetailContainer } from './components/ItemDetailContainer';
 import { ItemListContainer } from './components/ItemListContainer'
 import { Routes, Route } from 'react-router-dom';
-
+import { Cart } from './components/Cart';
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
         <Route path='/' element={<ItemListContainer />} />
         <Route path='/:typeId/' element={<ItemListContainer />} />
         <Route path='/:typeId/:productId' element={<ItemDetailContainer />} />
-        <Route path='/cart'/>
+        <Route path='/cart' element={<Cart />}/>
       </Routes>
       {/* <Footer /> */}
     </>

@@ -6,7 +6,7 @@ function NavUl() {
     return (
         <>
             <nav>
-                <ul>
+                <ul> {/* Crear categorias vía map */}
                     <li><Link to='/'>Home</Link></li>
                     <li><Link to='rides'>Rides</Link></li>
                     <li><Link to='hihats'>Hi-Hats</Link></li>
