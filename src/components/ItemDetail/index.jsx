@@ -13,7 +13,7 @@ function ItemDetail({product}) {
     return (
         <div className="itemDetailContent">
             <div className="goBackDiv">
-                <Link to={`/${typeId}`}>
+                <Link to={`/category/${typeId}`}>
                     <ArrowBackIcon /> 
                     <p>{ `BACK TO ${prettyNameFromType(typeId).toUpperCase()}` }</p>   
                 </Link>           
