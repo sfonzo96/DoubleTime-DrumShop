@@ -4,7 +4,7 @@ import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
 import './ItemCounter.scss'
 
 
-function ItemCounter({initialAmount, stockAmount, setProductWasAdded, productWasAdded}) {
+function ItemCounter({initialAmount, stockAmount, onAdd}) {
 
     const [counter, setCounter] = useState(initialAmount);
 
@@ -23,7 +23,7 @@ function ItemCounter({initialAmount, stockAmount, setProductWasAdded, productWas
                 <div className="counterShow">{counter}</div>
                 <button className="plus1Btn" onClick={increment} disabled={counter === stockAmount}><AddCircleIcon/></button>
             </div>
-            <button className="addToCartBtn" onClick={() => setProductWasAdded(true)}>Add to cart</button>
+            <button className="addToCartBtn" onClick={onAdd}>Add to cart</button>
         </div>
     )
 }

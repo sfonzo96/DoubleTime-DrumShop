@@ -10,6 +10,10 @@ function ItemDetail({product}) {
     const {typeId} = useParams();
     const [productWasAdded, setProductWasAdded] = useState(false);
 
+    const onAdd = () => {
+        setProductWasAdded(true);
+    }
+
     return (
         <div className="itemDetailContent">
             <div className="goBackDiv">
@@ -29,7 +33,7 @@ function ItemDetail({product}) {
                             <button className="addToCartBtn">Go to cart</button>
                         </Link>
                         :
-                        <ItemCounter initialAmount={1} stockAmount={product.stock} setProductWasAdded={setProductWasAdded} productWasAdded={productWasAdded}/>
+                        <ItemCounter initialAmount={1} stockAmount={product.stock} onAdd={onAdd}/>
                     }
                 </div> 
             </div>
