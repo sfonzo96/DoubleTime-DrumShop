@@ -41,7 +41,7 @@ export const cymbals = [
         type: 'hihats',
         description: `Warm, full-bodied tone with clean stick sound. Fast, bright "chick" that cuts through.`,
         price: 100,
-        stock: 1,
+        stock: 0,
     },
     {
         id: 5,

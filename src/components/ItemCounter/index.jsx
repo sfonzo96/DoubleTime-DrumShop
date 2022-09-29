@@ -19,11 +19,11 @@ function ItemCounter({initialAmount, stockAmount, onAdd, product}) {
     return (
         <div className="counterContainer">
             <div className="upperCounter">
-                <button className="minus1Btn" onClick={decrement} disabled={counter === initialAmount}><RemoveCircleIcon/></button>
+                <button className="minus1Btn" onClick={decrement} disabled={counter === initialAmount || stockAmount === 0 }><RemoveCircleIcon/></button>
                 <div className="counterShow">{counter}</div>
-                <button className="plus1Btn" onClick={increment} disabled={counter === stockAmount}><AddCircleIcon/></button>
+                <button className="plus1Btn" onClick={increment} disabled={counter === stockAmount || stockAmount === 0 }><AddCircleIcon/></button>
             </div>
-            <button className="addToCartBtn" onClick={() => onAdd(product, counter)}>Add to cart</button>
+            <button className="addToCartBtn" disabled={stockAmount === 0} onClick={() => onAdd(product, counter)}>{stockAmount? 'Add to cart' : 'No stock available'}</button>
         </div>
     )
 }
