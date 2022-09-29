@@ -1,17 +1,21 @@
-import {React, useState, useEffect} from "react";
+import {React, useState} from "react";
 import './ItemDetail.scss';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Link, useParams } from 'react-router-dom';
 import { prettyNameFromType } from '../../utils/functions/prettyNameFromType';
 import { ItemCounter} from '../ItemCounter';
+import { useCartContext } from '../../context/CartContext'
  
 function ItemDetail({product}) {
 
     const {typeId} = useParams();
-    const [productWasAdded, setProductWasAdded] = useState(false);
 
-    const onAdd = () => {
+    const [productWasAdded, setProductWasAdded] = useState(false);
+    const {addProduct} = useCartContext();
+
+    const onAdd = (product, amount) => {
         setProductWasAdded(true);
+        addProduct(product, amount)
     }
 
     return (
@@ -33,7 +37,7 @@ function ItemDetail({product}) {
                             <button className="addToCartBtn">Go to cart</button>
                         </Link>
                         :
-                        <ItemCounter initialAmount={1} stockAmount={product.stock} onAdd={onAdd}/>
+                        <ItemCounter initialAmount={1} stockAmount={product.stock} onAdd={onAdd} product={product}/>
                     }
                 </div> 
             </div>

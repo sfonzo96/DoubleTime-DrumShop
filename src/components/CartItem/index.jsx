@@ -4,7 +4,9 @@ export function CartItem({product}) {
 
     return (
         <>
-            <div>{product.image}</div>
+            <div>
+                <img src={product.image} alt="" width='200px'/>
+            </div>
             <div>{product.title}</div>
             <div>{product.price}</div>
             <div>{product.amount}</div>
