@@ -22,7 +22,7 @@ export function CartProvider({children}) {
 
     const removeProduct = (id) => setCart(cart.filter(product => product.id !== id));
 
-    const emptyCart = () => setCart([]);
+    const clearCart = () => setCart([]);
 
     useEffect(() => {
         localStorage.setItem("CART", JSON.stringify(cart));
@@ -31,7 +31,7 @@ export function CartProvider({children}) {
     return (
         <CartContext.Provider value={{
             cart,
-            emptyCart,
+            clearCart,
             isInCart,
             removeProduct,
             addProduct
