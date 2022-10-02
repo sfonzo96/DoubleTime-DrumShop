@@ -1,0 +1,18 @@
+.cartContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.cartRow {
+    display: flex;
+    justify-content: center;
+
+    &.itemsContainer {
+        flex-direction: column;
+    }
+}
+
+.outerBtnContainer {
+    display: flex;
+    gap: 2rem;
+}

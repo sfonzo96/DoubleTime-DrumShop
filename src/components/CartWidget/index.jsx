@@ -11,7 +11,7 @@ function CartWidget() {
     const [itemsInCart, setItemsInCart] = useState(0);
     
     useEffect(() => {
-        if (cart.lenght !== 0) {
+        if (cart.length) {
             let totalAmount = 0;
             cart.forEach(item => totalAmount += item.amount);
             setItemsInCart(totalAmount);
@@ -22,7 +22,7 @@ function CartWidget() {
         <div className="cartContainer">
             <Link to='/cart'>
                 <ShoppingCartIcon />
-                <span>{itemsInCart}</span>
+                {cart.length ? <span>{itemsInCart}</span> : null}
             </Link>
         </div>
     )

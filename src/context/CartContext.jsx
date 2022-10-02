@@ -21,12 +21,22 @@ export function CartProvider({children}) {
     }
 
     const removeProduct = (id) => setCart(cart.filter(product => product.id !== id));
+    
+    const [totalAmount, setTotalAmount] = useState(0);
 
-    const clearCart = () => setCart([]);
+    const clearCart = () => {
+        setCart([]);
+    }
 
     useEffect(() => {
         localStorage.setItem("CART", JSON.stringify(cart));
-      }, [cart]);
+
+        let total = 0;
+        cart.forEach(item => {
+            total += item.amount * item.price;
+        })
+        setTotalAmount(total);
+    }, [cart])
 
     return (
         <CartContext.Provider value={{
@@ -34,7 +44,8 @@ export function CartProvider({children}) {
             clearCart,
             isInCart,
             removeProduct,
-            addProduct
+            addProduct,
+            totalAmount
         }}>
             {children}
         </CartContext.Provider>

@@ -13,8 +13,8 @@ export function ItemListContainer() {
 
     const [productsList, setProductsList] = useState([]);
 
-    //Backdrop de MUI
     const [open, setOpen] = useState(true); 
+    
     const handleClose = () => {
         setOpen(false);
     };

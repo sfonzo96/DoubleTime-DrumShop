@@ -57,7 +57,7 @@ export const cymbals = [
     {
         id: 6,
         image: '/cymbalsimg/zildjian/19KCustomSpecialDryCrash.webp',
-        title: '19" K CUSTOM SPECIAL DRY CRASH',
+        title: '19" K Custom Special Dry Crash',
         brand: 'zildjian',
         series: 'k custom special dry',
         type: 'crashes',
