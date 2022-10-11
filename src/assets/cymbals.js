@@ -1,9 +1,8 @@
 export const cymbals = [
     {
-        id: 1,
         image: '/cymbalsimg/zildjian/10OrientalDoom.webp',
         title: '20" Oriental Crash of Doom',
-        brand: 'zildjian',
+        brand: 'Zildjian',
         series: 'doom',
         type: 'fxcymbs',
         description: `Monstrous, explosive FX cymbal that delivers booming trash crashes, dry stick sound, and a broad sustain rich with dark, exotic overtones.`,
@@ -11,18 +10,16 @@ export const cymbals = [
         stock: 4,
     },
     {
-        id: 3,
         image: '/cymbalsimg/zildjian/20KConstantinopleRide.webp',
         title: '20" K Constantinople Bounce Ride',
-        brand: 'zildjian',
+        brand: 'Zildjian',
         type: 'rides',
-        series: 'avedis',
+        series: 'k constantinople',
         description: `The K Constantinople Bounce Ride is the result of a collaboration with jazz artist Kenny Washington, and recreates the specs of an old, classic K gifted to him in the 1970's by late jazz great Mel Lewis. While replicating the higher curvature and narrower, wider spaced lathing style, a new cup design was created to best resemble that of Kenny's old K. Extra 'cluster' hammering, typically found in orchestral cymbals and placed around the cymbal in eight unique clusters, gives the cymbal a lower drone and just enough trash and 'dirt'. This 20" size features slightly smaller hammer clusters and a slightly higher pitch than the 22", with plenty of wash and sustain that rides over the band and cuts through most small-to-big band settings.`,
         price: 100,
         stock: 1,
     },
     {
-        id: 2,
         image: '/cymbalsimg/zildjian/14ACustomHH.webp',
         title: '14" A Custom Hi Hat',
         brand: 'zildjian',
@@ -33,7 +30,6 @@ export const cymbals = [
         stock: 2,
     },
     {
-        id: 4,
         image: '/cymbalsimg/zildjian/14KCustomDarkHH.webp',
         title: '14" K Custom Dark Hi Hat',
         brand: 'zildjian',
@@ -44,7 +40,6 @@ export const cymbals = [
         stock: 0,
     },
     {
-        id: 5,
         image: '/cymbalsimg/zildjian/14KLightHH.webp',
         title: '14" K Light Hi Hat',
         brand: 'zildjian',
@@ -55,7 +50,6 @@ export const cymbals = [
         stock: 8,
     },
     {
-        id: 6,
         image: '/cymbalsimg/zildjian/19KCustomSpecialDryCrash.webp',
         title: '19" K Custom Special Dry Crash',
         brand: 'zildjian',
@@ -66,7 +60,6 @@ export const cymbals = [
         stock: 3,
     },
     {
-        id: 7,
         image: '/cymbalsimg/zildjian/14KSweetHH.webp',
         title: '14" K Sweet Hi Hat',
         brand: 'zildjian',

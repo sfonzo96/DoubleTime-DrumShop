@@ -9,7 +9,9 @@ export function Header() {
     return (
         <>
             <header>
-                <Link to='/'><img src={logo} alt="logo" ></img></Link>
+                <Link to='/'>
+                    <img src={logo} alt="logo" ></img>
+                </Link>
                 <NavUl />
                 <CartWidget />
             </header>

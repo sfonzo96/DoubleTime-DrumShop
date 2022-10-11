@@ -23,11 +23,11 @@
             border: none;
             cursor: pointer;
             display: flex;
-            margin: auto;
             
-            &:disabled {
-                color: grey;
+            &:disabled svg {
+                    fill: grey;
             }
+            
         }
 
         .minus1Btn {
@@ -36,16 +36,16 @@
             border: none;
             cursor: pointer;
             display: flex;
-            margin: auto;
 
-            &:disabled {
-                color: grey;
+            &:disabled svg {
+                fill: grey;
             }
             
         }
 
-        .css-i4bv87-MuiSvgIcon-root {
-            font-size: 1.6rem;
+        svg {
+            width: 2rem;
+            height: 2rem;
         }
     }
 

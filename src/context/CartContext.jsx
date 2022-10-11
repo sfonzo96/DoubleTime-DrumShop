@@ -8,7 +8,7 @@ export function CartProvider({children}) {
 
     const [cart, setCart] = useState(JSON.parse(localStorage.getItem('CART')) || []);
     
-    const isInCart = (id) => cart.find(product => product.id === id)? true : false;
+    const isInCart = (id) => {return cart.find(product => product.id === id)};
 
     const addProduct = (product, amount) => {
         if (isInCart(product.id)) {

@@ -1,6 +1,5 @@
 import {React, useState} from "react";
 import './ItemDetail.scss';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Link, useParams } from 'react-router-dom';
 import { prettyNameFromType } from '../../utils/functions/prettyNameFromType';
 import { ItemCounter} from '../ItemCounter';
@@ -22,7 +21,11 @@ function ItemDetail({product}) {
         <div className="itemDetailContent">
             <div className="goBackDiv">
                 <Link to={`/category/${typeId}`}>
-                    <ArrowBackIcon /> 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="445.002" height="248.175" viewBox="0 0 445.002 248.175">
+                        <g id="goback" transform="translate(0 -75.914)">
+                        <path id="Trazado_1" data-name="Trazado 1" d="M425.738,182.686H65.766l85.895-77.214a16.1,16.1,0,0,0,0-24.485,20.818,20.818,0,0,0-27.238,0L5.644,187.757a16.1,16.1,0,0,0,0,24.485L124.422,319.017a20.821,20.821,0,0,0,27.238,0,16.1,16.1,0,0,0,0-24.484L65.766,217.315H425.738C436.376,217.315,445,209.562,445,200S436.377,182.686,425.738,182.686Z"/>
+                        </g>
+                    </svg>
                     <p>{ `BACK TO ${prettyNameFromType(typeId).toUpperCase()}` }</p>   
                 </Link>           
             </div>

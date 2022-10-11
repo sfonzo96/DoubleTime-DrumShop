@@ -1,22 +1,31 @@
 .cartContainer {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    font-size: 1.6rem;
-    height: max-content;
+    position: relative;
 
-    .css-i4bv87-MuiSvgIcon-root {
-        width: 2rem;
-        height: 2rem;
+    a{
+        display: flex;
+        align-items: center;
+        font-size: 1.6rem;
+        height: max-content;
+    }
+
+
+    svg {
+        width: 3rem;
+        height: 3rem;
         cursor: pointer;
     }
     
     span {
+        background-color: azure;
         display: inline-block;
-        width: 2rem;
-        height: 2rem;
+        width: 1.5rem;
+        height: 1.5rem;
         border-radius: .5rem;
         border: .1rem solid black;
         text-align: center;
+        font-size: 1.2rem;
+        position: absolute;
+        bottom: 0;
+        right: 0;
     }
 }
