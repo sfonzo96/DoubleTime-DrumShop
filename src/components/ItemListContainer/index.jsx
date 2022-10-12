@@ -15,24 +15,11 @@ export function ItemListContainer() { //Agregar loader
     useEffect(() => {
         const productCollection = collection(db, products);
         if (typeId) {
-            const qry = query(productCollection, where('type', '==', `${typeId}`));
-            getDocs(qry)
-            .then((data) => {
-                const list = data.docs.map((product) => {
-                    return {...product.data(), id:product.id}
-                })
-                setProductsList(list);
-            })
+            const qryFilter = query(productCollection, where('type', '==', typeId));
+            getDocsAndSetList(qryFilter);
         } else {
-            getDocs(productCollection)
-            .then((data) => {
-                const list = data.docs.map((product) => {
-                    return {...product.data(), id:product.id}
-                })
-                setProductsList(list);
-            })
+            getDocsAndSetList(productCollection);
         }
-
     }, [typeId]);
 
     return (
@@ -43,4 +30,14 @@ export function ItemListContainer() { //Agregar loader
             </div>
         </>
     )
+
+    function getDocsAndSetList(qry) {
+        getDocs(qry)
+        .then((data) => {
+            const list = data.docs.map((product) => {
+                return { ...product.data(), id: product.id };
+            });
+            setProductsList(list);
+        });
+    }
 }

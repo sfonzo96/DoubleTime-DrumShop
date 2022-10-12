@@ -21,7 +21,7 @@ export function Cart() {
                     </div>
                     <div className="outerBtnContainer">
                         <button onClick ={clearCart}>Clear cart</button>
-                        <button>Checkout</button>
+                        <Link to={'/checkout'}><button>Checkout</button></Link>
                     </div>
                 </div>
             ) : (
@@ -34,11 +34,3 @@ export function Cart() {
         </>
     )
 }
-
-
-/* Nostrar:
-- Desglose de carrito y precio total CHECKED and working
-- Eliminar cada producto CHECKED and working
-- Mensaje condicionado en caso de que no haya productos (array.length === 0?) + link a home page // CHECKED and working 
-- CartWidget no tiene que mostrar nada en caso que este vacio (no debe mostrar el 0, simplemente el boton)  // CHECKED and working
-- */

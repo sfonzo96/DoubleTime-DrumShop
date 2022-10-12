@@ -1,6 +1,4 @@
-
 export function prettyNameFromType(typeId) {
-
     switch (typeId) {
         case 'rides':
             return 'Rides';
