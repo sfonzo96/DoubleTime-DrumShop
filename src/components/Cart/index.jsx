@@ -3,6 +3,8 @@ import { CartItem } from '../CartItem'
 import { useCartContext } from '../../context/CartContext'
 import { Link } from "react-router-dom";
 import './Cart.scss';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export function Cart() {
 
@@ -31,6 +33,7 @@ export function Cart() {
                     <Link to={'/'}><button>Start shopping</button></Link>
                 </div>
             )}
+            <ToastContainer />
         </>
     )
 }

@@ -16,7 +16,7 @@ export function CartItem({product}) {
                 <p>{product.amount}</p>
             </div>
             <div>{parseInt(product.price * product.amount)}</div>
-            <button className="removeItemBtn" onClick={() => removeProduct(product.id)}>Remove</button>
+            <button className="removeItemBtn" onClick={() => removeProduct(product.id, product)}>Remove</button>
         </div>
     )
 }
