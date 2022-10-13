@@ -13,9 +13,7 @@ export function CartItem({product}) {
             </div>
             <div>{product.title}</div>
             <div>
-                <button> - </button> {/* Dar funciones en CartContext que modifiquen la prop amount del producto en cart */}
                 <p>{product.amount}</p>
-                <button> + </button>
             </div>
             <div>{parseInt(product.price * product.amount)}</div>
             <button className="removeItemBtn" onClick={() => removeProduct(product.id)}>Remove</button>

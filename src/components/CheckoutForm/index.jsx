@@ -1,8 +1,8 @@
 import { React} from "react";
 import { useCartContext } from '../../context/CartContext'
 import { useNavigate } from "react-router-dom";
-import { db, sales } from "../../firebase/firebase";
-import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { db, sales, products } from "../../firebase/firebase";
+import { addDoc, collection, serverTimestamp, doc, updateDoc } from "firebase/firestore";
 import { useState } from "react";
 
 export function CheckoutForm() {
@@ -36,11 +36,19 @@ export function CheckoutForm() {
         setBuyerData({...buyerData, [name]: value});
     }
 
+    const updateStock = () => {
+        cart.forEach((product) => {
+            const update = doc(db, products, product.id);
+            updateDoc(update, {stock: product.stock - product.amount});
+        })
+    }
+
     const postSaleData = (e) => {
         e.preventDefault();
         const salesCollection = collection(db, sales);
         addDoc(salesCollection, order)
-        .then( ()  => {
+        .then(updateStock)
+        .then( () => {
             clearCart();
             setBuyerData(buyerTemplate);
         })
