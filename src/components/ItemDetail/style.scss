@@ -1,0 +1,93 @@
+@use '../../utils/abstractsStyling' as abs;
+
+.itemDetailContent {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    
+    .goBackDiv {
+        width: 100%;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        padding: 1rem 1rem;
+        font-size: 1.6rem;
+        width: max-content;
+        font-weight: bold;
+        cursor: pointer;
+
+        svg {
+            width: 3rem;
+            height: 3rem;
+            font-size: 2rem;
+        }
+    }
+
+    .detailDiv {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .productMedia {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+            img {
+                filter: drop-shadow(0 0 .5rem abs.color('grey-detail'));
+                width: 80%;
+                margin-bottom: auto;
+            }
+
+        }
+
+        .descriptDiv {
+            display: flex;
+            flex-direction: column;
+            gap: 5rem;
+            font-size: 1.8rem;
+            width: 40%;
+            height: 100%;
+
+            .priceAndSizeContainer {
+                display: flex;
+                justify-content: space-between;
+                font-size: 2rem;
+
+                select {
+                    width: 20%;
+                    min-width: 5rem;
+                    text-align: center;
+                    cursor: pointer;
+                }
+            }
+
+            h2 {
+                font-size: 3.2rem;
+                text-transform: uppercase;
+            }
+
+            a {
+                margin: auto;
+
+                .toCartBtn {
+                    cursor: pointer;
+                    background-color: transparent;
+                    border: none;
+                    padding: 1rem 2rem;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    min-width: max-content;
+                    width: 50%;
+                    outline: .2rem solid abs.color('black-bg');
+    
+                    &:hover {
+                        background-color: abs.color('white-card');
+                    }
+                }
+            }
+        }
+    }
+}
+

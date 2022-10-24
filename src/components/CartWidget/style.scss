@@ -1,4 +1,6 @@
-.cartContainer {
+@use '../../utils/abstractsStyling' as abs;
+
+.cartWidgetContainer {
     position: relative;
 
     a{
@@ -13,10 +15,11 @@
         width: 3rem;
         height: 3rem;
         cursor: pointer;
+        fill: abs.color('white');
     }
     
     span {
-        background-color: azure;
+        background-color: abs.color('white');
         display: inline-block;
         width: 1.5rem;
         height: 1.5rem;

@@ -1,9 +1,8 @@
 import React, { useState} from "react";
+import './style.scss'
 
-import './ItemCounter.scss'
 
-
-function ItemCounter({initialAmount, stockAmount, onAdd, product}) {
+function ItemCounter({initialAmount, stockAmount, onAdd, product, size}) {
 
     const [counter, setCounter] = useState(initialAmount);
 
@@ -17,7 +16,7 @@ function ItemCounter({initialAmount, stockAmount, onAdd, product}) {
 
     return (
         <div className="counterContainer">
-            <div className="upperCounter">
+            <div className="counter">
                 <button className="minus1Btn" onClick={decrement} disabled={counter === initialAmount || stockAmount === 0}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="490" height="45.938" viewBox="0 0 490 45.938">
                         <rect id="remove" width="490" height="45.938"/>
@@ -31,7 +30,7 @@ function ItemCounter({initialAmount, stockAmount, onAdd, product}) {
 
                 </button>
             </div>
-            <button className="addToCartBtn" disabled={stockAmount === 0} onClick={() => onAdd(product, counter)}>{stockAmount? 'Add to cart' : 'No stock available'}</button>
+            <button className="addToCartBtn" disabled={stockAmount === 0} onClick={() => onAdd(product, counter, size)}>{stockAmount? 'Add to cart' : 'No stock available'}</button>
         </div>
     )
 }

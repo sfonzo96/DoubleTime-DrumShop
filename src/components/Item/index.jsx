@@ -1,6 +1,6 @@
 import React from "react";
-import './Item.scss'
 import { Link, useParams } from "react-router-dom";
+import './style.scss'
 
 export function Item({product}) {
 

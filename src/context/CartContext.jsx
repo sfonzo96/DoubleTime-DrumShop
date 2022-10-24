@@ -12,13 +12,13 @@ export function CartProvider({children}) {
     
     const isInCart = (id) => {return cart.find(product => product.id === id)};
 
-    const addProduct = (product, amount) => {
+    const addProduct = (product, amount, size) => {
         if (isInCart(product.id)) {
             setCart(cart.map( prod => {
-                return prod.id === product.id ? {...prod, amount: prod.amount + amount} : prod
+                return prod.id === product.id ? {...prod, amount: prod.amount + amount, pickedSize: size} : prod // Solo permite elegir un tamaño, debería modificar id acorde al elegido :(
             }));
         } else {
-            setCart([...cart, {...product, amount}]);
+            setCart([...cart, {...product, amount, pickedSize: size}]);
         }
     }
 
@@ -35,7 +35,7 @@ export function CartProvider({children}) {
         });
     }
 
-    const removeProduct = async (id,productToDelete) => {
+    const removeProduct = (id,productToDelete) => {
         productDeleted(productToDelete);
         setCart(cart.filter(product => product.id !== id));
     };

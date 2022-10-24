@@ -1,0 +1,74 @@
+@use '../../utils/abstractsStyling' as abs;
+
+.cartContainer {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    font-size: 1.6rem;
+    font-weight: bold;
+    gap: 3rem;
+}
+
+.cartRow {
+    display: flex;
+    justify-content: center;
+
+    &.itemsContainer {
+        flex-direction: column;
+    }
+}
+
+.clearAndCheckoutContainer {
+    display: flex;
+    justify-content: space-around;
+
+    button {
+        text-transform: uppercase;
+        padding: .5rem;
+        cursor: pointer;
+        background-color: abs.color('black-bg');
+        color: abs.color('white');
+        border: none;
+    }
+
+    a button {
+        background-color: abs.color('gold-main');
+
+        &:hover {
+            background-color: abs.color('gold-dark'); 
+        }
+    }
+}
+
+.emptyCartAdv {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-size: 1.6rem;
+    gap: 2rem;
+    padding-top: 10rem;
+    align-items: center;
+
+    h3 {
+        font-weight: bold;
+    }
+
+    img {
+        width: 30rem;
+    }
+
+    &> * {
+        text-align: center;
+        width: max-content;
+    }
+
+
+    button {
+        text-transform: uppercase;
+        padding: .5rem;
+        cursor: pointer;
+        background-color: abs.color('black-bg');
+        color: abs.color('white');
+        border: none;
+    }
+}

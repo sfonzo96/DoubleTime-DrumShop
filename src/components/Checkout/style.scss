@@ -1,0 +1,74 @@
+@use '../../utils/abstractsStyling' as abs;
+
+.successfulBuyContainer {
+    padding: 5rem 0;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    font-size: 1.6rem;
+    text-align: justify;
+    
+    .copyIdBtn {
+        font-weight: bold;
+        color: abs.color('gold-dark');
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    img {
+        width: 25rem;
+    }
+
+    a {
+        color: abs.color('green-detail');
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.chkOutForm {
+    display: flex;
+    flex-direction: column;
+    padding: 10rem;
+    font-size: 1.8rem;
+    gap: 3rem;
+    width: 50%;
+
+    label {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        input, textarea {
+            border: none;
+            border-bottom: .2rem solid abs.color('grey-detail');
+            resize: none;
+
+            &:focus {
+                outline: none;
+                border-bottom: .2rem solid abs.color('gold-main'); 
+            }
+        }
+    }
+
+    button {
+        text-transform: uppercase;
+        padding: .5rem;
+        cursor: pointer;
+        border: none;
+        background-color: abs.color('gold-main');
+        color: abs.color('white');
+        width: 50%;
+        margin: 0 auto;
+
+        &:hover {
+            background-color: abs.color('gold-dark'); 
+        }
+    }
+}

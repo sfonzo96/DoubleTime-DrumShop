@@ -1,0 +1,36 @@
+@use '../../utils/abstractsStyling' as abs;
+
+.card {
+    background-color: abs.color('white-card');
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    border-radius: .5rem;
+    padding-bottom: 1.5rem;
+
+    img {
+        width: 20rem;
+        filter: drop-shadow(0 0 .2rem abs.color('grey-detail'));
+    }
+
+    h3 {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    .seeMore {
+        cursor: pointer;
+        width: 10rem;
+        padding: 1rem;
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        background-color: abs.color('gold-main');
+        border: none;
+        color: abs.color('white-card');
+
+        &:hover {
+            background-color: abs.color('gold-dark');
+        }
+    }
+}

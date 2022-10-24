@@ -1,46 +1,49 @@
+@use '../../utils/abstractsStyling' as abs;
+
 .counterContainer {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: max-content;
+    width: 100%;
     font-size: 1.6rem;
-    border: .2rem solid brown;
-    border-radius: 1.5rem;
-    padding: 1.5rem;
-    gap: 1rem;
+    outline: .2rem solid abs.color('black-bg');
 
-    .upperCounter {
+    .counter {
         display: flex;
         justify-content: space-around;
         align-items: center;
-        width: max-content;
-        gap: 1rem;
+        width: 50%;
+        min-width: max-content;
+        gap: 2rem;
         padding: 1rem;
+        font-weight: bold;
+        background-color: abs.color('black-bg');
+        color: abs.color('white');
+
+        .counterShow {
+            width: 1.6rem;
+        }
 
         .plus1Btn {
-            color: rgb(36, 180, 36);
+            fill: abs.color('white');
             background-color: transparent;
             border: none;
             cursor: pointer;
             display: flex;
             
             &:disabled svg {
-                    fill: grey;
+                fill: abs.color('grey-detail');
             }
-            
         }
 
         .minus1Btn {
-            color: rgb(141, 34, 34);
+            fill: abs.color('white');
             background-color: transparent;
             border: none;
             cursor: pointer;
             display: flex;
 
             &:disabled svg {
-                fill: grey;
-            }
-            
+                fill: abs.color('grey-detail');
+            }  
         }
 
         svg {
@@ -53,10 +56,15 @@
     .addToCartBtn {
         cursor: pointer;
         background-color: transparent;
-        border-radius: .75rem;
+        border: none;
+        padding: 1rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        min-width: max-content;
+        width: 50%;
 
         &:hover {
-            background-color: aliceblue;
+            background-color: abs.color('white-card');
         }
     }
 }

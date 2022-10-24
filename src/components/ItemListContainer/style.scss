@@ -1,0 +1,31 @@
+@use '../../utils/abstractsStyling' as abs;
+
+.listTitle {
+    text-align: center;
+    font-size: 5rem;
+    color: abs.color('gold-dark');
+    text-transform: uppercase;
+}
+
+.listTitleDeco {
+    display: block;
+    width: auto;
+    height: .1rem;
+    background-color: abs.color('black-bg');
+}
+
+.DotPulse-module_container__Q1oww {
+    margin: 10rem;
+}
+
+.itemListContainer {
+    display: grid;
+    width: 95%;
+    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+    gap: 4rem;
+    padding: 2rem;
+    border-radius: 2rem;
+    scrollbar-width: none;
+    margin: 0;
+}
+

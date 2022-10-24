@@ -1,3 +1,5 @@
+@use '../../utils/abstractsStyling' as abs;
+
 header nav ul {
     display: flex;
     list-style: none;
@@ -16,7 +18,7 @@ header nav ul {
         a {
             text-decoration: none;
             width: max-content;
-            color: black;
+            color: abs.color('white');
             text-align: center;
             position: relative;
 
@@ -27,7 +29,7 @@ header nav ul {
                 width: 0;
                 left: 50%;
                 top: 2rem;
-                background-color: gray;
+                background-color: abs.color('gold-main');
                 transition: width ease 300ms;
                 transform: translate(-50%, 0);
             }

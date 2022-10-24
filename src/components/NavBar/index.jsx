@@ -2,10 +2,10 @@ import React from "react";
 import logo from '../../assets/logo.png';
 import CartWidget from '../CartWidget';
 import NavUl from "../NavUl";
-import './Header.scss'
+import './style.scss'
 import { Link } from "react-router-dom";
 
-export function Header() {
+export function NavBar() {
     return (
         <>
             <header>

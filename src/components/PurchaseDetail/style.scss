@@ -1,0 +1,61 @@
+@use '../../utils/abstractsStyling' as abs;
+
+.trackerContainer {
+    padding: 5rem 0;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .purchaseInfoContainer {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 3rem;
+        font-size: 1.6rem;
+
+        h3 {
+            font-size: 1.6rem;
+        }
+
+        .purchaseItemsContainer {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            gap: 2.5rem;
+        
+            .purchaseItem {
+                display: grid;
+                align-items: center;
+                justify-items: center;
+                grid-template-columns: 1fr .5fr .5fr .5fr;
+            }
+        }
+    }
+
+    .statusContainer {
+        font-size: 1.6rem;
+    }
+
+    .statusStyle {
+        font-weight: bold;
+
+        &.pendingStatus {
+            color: abs.color('grey-detail');
+        }
+    
+        &.sentStatus {
+            color: abs.color('gold-main');
+        }
+    
+        &.deliveredStatus {
+            color: abs.color('green-detail');
+        }
+    }
+}
+
