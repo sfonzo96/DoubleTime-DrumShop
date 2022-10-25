@@ -12,6 +12,7 @@ export function Checkout() {
     const buyerTemplate = {
         fullName: '',
         email: '',
+        emailVerif: '',
         message: '',
     }
 
@@ -64,7 +65,7 @@ export function Checkout() {
 
     const postSaleData = (e, saleId) => {
         e.preventDefault();
-        if (!saleId && buyerData.email && buyerData.fullName) {
+        if (!saleId && (buyerData.email === buyerData.emailVerif) && buyerData.fullName) {
             const salesCollection = collection(db, sales);
             addDoc(salesCollection, order)
             .then( result => {
@@ -74,7 +75,7 @@ export function Checkout() {
                 setBuyerData(buyerTemplate);
             })
         } else {
-            toast.error(`A required field of the form is missing. Please complete them all in order to submit your purchase successfully.`, {
+            toast.error(`A required field of the form is missing. Please complete them all in order to submit your purchase successfully, also check emails match`, {
                 position: "top-right",
                 autoClose: 5000,
                 hideProgressBar: false,
@@ -102,10 +103,13 @@ export function Checkout() {
             :
                 <form className='chkOutForm' onSubmit={postSaleData}>
                     <label htmlFor="">Full name
-                        <input type="text" name='fullName' placeholder="Your full name" value={buyerData.fullName} onChange={getBuyerData}/>
+                        <input type="text" name='fullName' placeholder="Your full name" value={buyerData.fullName} onChange={getBuyerData} required={true}/>
                     </label>
                     <label htmlFor="">Email
-                        <input type='email' name='email' placeholder="Your e-mail" value={buyerData.email} onChange={getBuyerData} />
+                        <input type='email' name='email' placeholder="Your e-mail" value={buyerData.email} onChange={getBuyerData} required={true}/>
+                    </label>
+                    <label htmlFor="">Verificate email
+                        <input type='email' name='emailVerif' placeholder="Your e-mail" value={buyerData.emailVerif} onChange={getBuyerData} required={true}/>
                     </label>
                     <label htmlFor="">Message (optional)
                         <textarea rows={5} type="number" name='message' placeholder="Things you consider to be important for us to know" value={buyerData.message} onChange={getBuyerData}/>
