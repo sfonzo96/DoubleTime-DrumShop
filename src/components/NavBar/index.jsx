@@ -1,5 +1,5 @@
 import React from "react";
-import logo from '../../assets/logo.png';
+import logo from '../../assets/logo.svg';
 import CartWidget from '../CartWidget';
 import NavUl from "../NavUl";
 import './style.scss'
@@ -9,8 +9,9 @@ export function NavBar() {
     return (
         <>
             <header>
-                <Link to='/'>
+                <Link className="logoContainer" to='/'>
                     <img src={logo} alt="logo" ></img>
+                    <p>Double-Time</p>
                 </Link>
                 <NavUl />
                 <CartWidget />

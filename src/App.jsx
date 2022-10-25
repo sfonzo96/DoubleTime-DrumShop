@@ -9,7 +9,11 @@ import { Checkout } from './components/Checkout';
 import { Tracker } from './components/Tracker';
 import './style.scss'
 
+
 function App() {
+
+
+  
   return (
     <>
       <CartProvider>

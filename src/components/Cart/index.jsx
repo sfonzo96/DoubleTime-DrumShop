@@ -1,15 +1,71 @@
-import { React} from "react";
+import { React, useState, useCallback } from "react";
 import { CartItem } from '../CartItem'
 import { useCartContext } from '../../context/CartContext'
-import { Link } from "react-router-dom";
-import { ToastContainer } from 'react-toastify';
+import { Link, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { db, products } from "../../firebase/firebase";
+import { collection, getDocs} from "firebase/firestore";
 import './style.scss';
 import emptyCartSVG from '../../assets/emptyCart.svg';
+import { useEffect } from "react";
 
 export function Cart() {
 
     const {cart, clearCart, totalAmount} = useCartContext();
+    const navigate = useNavigate();
+    
+    const [dbProducts, setDbProducts] = useState([]);
+    const [notAvailableProducts, setNotAvailableProducts] = useState([]);
+    const [gettingData, setGettingData] = useState(true);
+
+    const verifyAvailability = useCallback(async () => {
+        try {
+            const productCollection = collection(db, products);
+            await getDocs(productCollection)
+            .then((data) => {
+                const list = data.docs.map((doc) => {
+                    return {...doc.data(), id: doc.id};
+                });
+                setDbProducts(list);
+            })
+            .then(res => compareStock(cart, dbProducts))
+            .then(res => setNotAvailableProducts(res)
+            )
+        } catch(error) { //Devuelve error porque se demora unos segs hasta traer y comparar stock (dbProducts entra vacía la primera vez a compareStock)
+            setTimeout(() => {setGettingData(false)}, 5000) 
+        }
+    },[cart, dbProducts])
+
+    const proceedToCheckout = () => {
+        if (notAvailableProducts.length === 0) {
+            navigate('/checkout')
+        } else {
+            toast.error(`Seems like we run out of stock in some of these products, we sugest you to clear the cart and `, {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            })
+        }
+    }
+
+    const compareStock = (cart, dbProducts) => {
+        const missingProducts = [];
+        cart.forEach(item => {
+            const matchingProduct = dbProducts.find(obj => obj.id === item.id);
+            if (item.amount > matchingProduct.stock) missingProducts.push(matchingProduct);
+        })
+        return [...missingProducts];
+    }
+
+    useEffect(() => {
+        verifyAvailability();
+    }, [gettingData, cart, verifyAvailability])
 
     return (
         <>
@@ -23,7 +79,7 @@ export function Cart() {
                     </div>
                     <div className="clearAndCheckoutContainer">
                         <button onClick={clearCart}>Clear cart</button>
-                        <Link to={'/checkout'}><button>Checkout</button></Link>
+                        <button onClick={proceedToCheckout} className={gettingData? 'checkoutBtn disabled' : 'checkoutBtn'}>{!gettingData? 'Checkout' : 'Available in 5s'}</button>
                     </div>
                 </div>
                 ) : (

@@ -1,5 +1,9 @@
 @use '../../utils/abstractsStyling' as abs;
 
+.disabledLink {
+    pointer-events: none;
+}
+
 .cartContainer {
     display: flex;
     flex-direction: column;
@@ -29,15 +33,22 @@
         background-color: abs.color('black-bg');
         color: abs.color('white');
         border: none;
-    }
 
-    a button {
-        background-color: abs.color('gold-main');
+        &.checkoutBtn {
+            background-color: abs.color('gold-main');
+    
+            &:hover {
+                background-color: abs.color('gold-dark'); 
+            }
 
-        &:hover {
-            background-color: abs.color('gold-dark'); 
+            &.disabled {
+                background-color: abs.color('grey-detail');
+                pointer-events: none;
+            }
         }
     }
+
+    
 }
 
 .emptyCartAdv {

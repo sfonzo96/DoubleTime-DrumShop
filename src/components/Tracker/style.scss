@@ -1,1 +1,47 @@
 @use '../../utils/abstractsStyling' as abs;
+
+.trackerContainer {
+    padding: 5rem 0;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    text-align: center;
+
+    form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        
+        label {
+            width: 20%;
+        }
+
+        input {
+            font-size: 1.4rem;
+            border-radius: 0;
+            border: none;
+            padding: .1rem;
+            outline: .2rem solid abs.color('black-bg');
+            width: 100%;
+        }
+
+        button {
+            width: 20%;
+            font-size: 1.2rem;
+            padding: .5rem;
+            border: none;
+            color: abs.color('white');
+            background-color: abs.color('gold-main');
+            text-transform: uppercase;
+            cursor: pointer;
+            font-weight: bold;
+
+            &:hover {
+                background-color: abs.color('gold-dark');
+            }
+        }
+    }
+}

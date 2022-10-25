@@ -92,12 +92,12 @@ export function Checkout() {
             {saleId? 
                 <div className="successfulBuyContainer">
                     <img src={rockHand} alt=''/>
-                    <h2>
+                    <p>
                         The order has been saved, we'll reach you as soon as possible in order to confirm everything's OK and set your preferred payment method.
                         <br />This sale's ID is <button className="copyIdBtn" onClick={() => copyIdToClipboard(saleId)}>{saleId}</button> (click it to copy), keep it handy for checking your purchase status by using our tracking system.
                         We are glad you're choosing us for getting your new cymbal. You'll be rocking it soon so, hold on!
                         Click <Link to={'/'}>here</Link> to return to the home page.
-                    </h2>
+                    </p>
                 </div>
             :
                 <form className='chkOutForm' onSubmit={postSaleData}>
