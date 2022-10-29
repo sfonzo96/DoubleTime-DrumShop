@@ -26,6 +26,24 @@ Este trabajo es parte del proyecto final del curso de React JS de Coderhouse.
   - React Router (navegación, https://reactrouter.com/)
   - UI Ball (loades, https://uiball.com/loaders)
 
+## Funcionalidades
+- Navegación SPA
+- Carrito de compras que redirecciona a formulario de confirmación
+- Filtrado por categorías
+- Tracker de compras
+- Actualización y verificación de stock
+
+## Roadmap
+- Modificar estilos para dar cualidad responsive al sitio (actualmente NO lo es)
+
+## Feedback
+Ante sugerencias o recomendaciones podés comunicarte conmigo mediante LinkedIn: https://www.linkedin.com/in/santiagofonzo/
+
+## Estado del proyecto
+Finalizado, con detalles pendientes que no afectan funcionalidades.
+
+## Authors
+- [@sfonzo96](https://github.com/sfonzo96/)
 
 ## Instalación
 Clonado del repositorio de manera local
@@ -48,24 +66,5 @@ Detener servidor
 ```bash
   ctrl + c
 ```
-
-## Funcionalidades
-- Navegación SPA
-- Carrito de compras que redirecciona a formulario para confirmar compra
-- Filtrado por categorías
-- Tracker de compras
-- Actualización y verificación de stock
-
-## Roadmap
-- Modificar estilos para dar cualidad responsive al sitio (actualmente NO lo es)
-
-## Feedback
-Ante sugerencias o recomendaciones podés comunicarte conmigo mediante LinkedIn: https://www.linkedin.com/in/santiagofonzo/
-
-## Estado del proyecto
-Finalizado, con detalles pendientes que no afectan funcionalidades.
-
-## Authors
-- [@sfonzo96](https://github.com/sfonzo96/)
 
 
