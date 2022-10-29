@@ -1,8 +1,8 @@
-import { React, useState, useEffect} from "react";
+import { React, useState } from "react";
 import { useCartContext } from '../../context/CartContext'
 import { db, sales, products } from "../../firebase/firebase";
 import { addDoc, collection, serverTimestamp, doc, updateDoc } from "firebase/firestore";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import './style.scss'
 import rockHand from '../../assets/rockHand.svg'
@@ -19,8 +19,6 @@ export function Checkout() {
     const {cart, clearCart, totalAmount} = useCartContext();
     const [buyerData, setBuyerData] = useState(buyerTemplate);
     const [saleId, setSaleId] = useState('');
-    
-    const navigate = useNavigate();
 
     const copyIdToClipboard = (saleId) => {
         navigator.clipboard.writeText(saleId)
@@ -59,7 +57,7 @@ export function Checkout() {
 
     const updateStock = () => {
         cart.forEach((product) => {
-            const update = doc(db, products, product.id);
+            const update = doc(db, products, product.id.substring(0,20));
             updateDoc(update, {stock: product.stock - product.amount});
         })
     }
@@ -88,10 +86,6 @@ export function Checkout() {
             });
         }
     }
-
-    useEffect(() => {
-        if (cart.length === 0) navigate('/cart');
-    }, [cart, navigate])
 
     return (
         <>  

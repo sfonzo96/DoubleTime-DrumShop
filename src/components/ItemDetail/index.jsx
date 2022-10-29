@@ -38,7 +38,7 @@ export function ItemDetail({product}) {
                 </div>
                 <div className="detailDiv">
                     <div className="productMedia">
-                    <img src={product.image} alt="" />
+                        <img src={product.image} alt="" />
                     </div>
                     <div className="descriptDiv">
                         <h2>{product.title}</h2>
@@ -46,6 +46,7 @@ export function ItemDetail({product}) {
                             <p>{'$ ' + product.price}</p>
                             <SizeSelector selectSize={selectSize} product={product}/>
                         </div>
+                        <p>Available stock: {product.stock}</p>
                         {productWasAdded? 
                             <Link to='/Cart'>
                                 <button className="toCartBtn">Go to cart</button>

@@ -9,7 +9,7 @@ export function PurchaseDetail({purchase}) {
     const navigate = useNavigate();
 
     return (
-        Object.keys(purchase).length > 1? 
+        Object.keys(purchase).length >= 1? 
             <div className="purchaseContainer">
                 <h2>Purchase tracking</h2>
                 <div className="purchaseInfoContainer">
@@ -35,6 +35,5 @@ export function PurchaseDetail({purchase}) {
                 <img src={missingPurchaseAdv} alt="" />
                 <p>We couldn't find any purchase made with that ID, please check it again. Click <span onClick={() => navigate('/')}>here</span> to go back to home page</p>
             </div>
-
     )
 }

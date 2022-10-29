@@ -33,7 +33,7 @@ export function Cart() {
             .then(res => setNotAvailableProducts(res)
             )
         } catch(error) {
-            setTimeout(() => {setGettingData(false)}, 5000)
+            setTimeout(() => {setGettingData(false)}, 3000)
         }
     }
 
@@ -57,7 +57,7 @@ export function Cart() {
     const compareStock = (cart, dbProducts) => {
         const missingProducts = [];
         cart.forEach(item => {
-            const matchingProduct = dbProducts.find(obj => obj.id === item.id);
+            const matchingProduct = dbProducts.find(obj => `${obj.id}-${item.pickedSize}` === item.id);
             if (item.amount > matchingProduct.stock) missingProducts.push(matchingProduct);
         })
         return [...missingProducts];

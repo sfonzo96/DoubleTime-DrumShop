@@ -54,6 +54,7 @@ Detener servidor
 - Carrito de compras que redirecciona a formulario para confirmar compra
 - Filtrado por categorías
 - Tracker de compras
+- Actualización y verificación de stock
 
 ## Roadmap
 - Modificar estilos para dar cualidad responsive al sitio (actualmente NO lo es)
