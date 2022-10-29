@@ -7,6 +7,7 @@ import { Cart } from './components/Cart';
 import { CartProvider } from './context/CartContext';
 import { Checkout } from './components/Checkout';
 import { Tracker } from './components/Tracker';
+import { Footer } from './components/Footer';
 import './style.scss'
 
 
@@ -27,7 +28,7 @@ function App() {
           <Route path='/tracker' element={<Tracker />} />
         </Routes>
       </CartProvider>
-      {/* <Footer /> */}
+      {<Footer />}
     </>
   )    
 } 

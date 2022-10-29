@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
+    font-family: 'Didact Gothic', sans-serif;
     &::before,
     &::after {
         box-sizing: border-box;
@@ -23,19 +23,22 @@ html {
     font-size: 62.5%;
     scroll-behavior: smooth;
     overflow-y: scroll;
+    height:max-content;
+    min-height: 100vh;
+
 }
 
 body {
     height: 100%;
     width: 100%;
     min-height: 100vh;
-    font-family: 'Didact Gothic', sans-serif;
-    display: flex;
-    flex-direction: column;
 }
 
 #root {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
 }
