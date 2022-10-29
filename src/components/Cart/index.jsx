@@ -1,4 +1,4 @@
-import { React, useState, useCallback } from "react";
+import { React, useState } from "react";
 import { CartItem } from '../CartItem'
 import { useCartContext } from '../../context/CartContext'
 import { Link, useNavigate } from "react-router-dom";
@@ -19,7 +19,7 @@ export function Cart() {
     const [notAvailableProducts, setNotAvailableProducts] = useState([]);
     const [gettingData, setGettingData] = useState(true);
 
-    const verifyAvailability = useCallback(async () => {
+    const verifyAvailability = async () => {
         try {
             const productCollection = collection(db, products);
             await getDocs(productCollection)
@@ -32,16 +32,16 @@ export function Cart() {
             .then(res => compareStock(cart, dbProducts))
             .then(res => setNotAvailableProducts(res)
             )
-        } catch(error) { //Devuelve error porque se demora unos segs hasta traer y comparar stock (dbProducts entra vacía la primera vez a compareStock)
-            setTimeout(() => {setGettingData(false)}, 5000) 
+        } catch(error) {
+            setTimeout(() => {setGettingData(false)}, 5000)
         }
-    },[cart, dbProducts])
+    }
 
     const proceedToCheckout = () => {
         if (notAvailableProducts.length === 0) {
             navigate('/checkout')
         } else {
-            toast.error(`Seems like we run out of stock in some of these products, we sugest you to clear the cart and `, {
+            toast.error(`Seems like we run out of stock in some of these products, we suggest you to check the updated stock on the product page.`, {
                 position: "top-right",
                 autoClose: 5000,
                 hideProgressBar: false,
@@ -65,7 +65,8 @@ export function Cart() {
 
     useEffect(() => {
         verifyAvailability();
-    }, [gettingData, cart, verifyAvailability])
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [gettingData, cart])
 
     return (
         <>

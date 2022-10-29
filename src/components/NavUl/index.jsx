@@ -1,22 +1,33 @@
-import React from "react";
+import { React, useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
+import { db, categories } from "../../firebase/firebase";
+import { getDocs, collection } from "firebase/firestore";
 import './style.scss'
 
-const navLinks = [
-    {id: 0, text:'Home', route:'/'},
-    {id: 1, text:'Rides', route: 'category/rides'},
-    {id: 2, text:'Hi-Hats', route: 'category/hihats'},
-    {id: 3, text:'Crashes', route: 'category/crashes'},
-    {id: 4, text:'FX Cymbals', route: 'category/fxcymbs'},
-    {id: 5, text:'Tracker', route: '/tracker'}
-];
-
 function NavUl() {
+
+    const [categoriesList, setCategoriesList] = useState([]);
+    
+    const getDocsAndSetCategories = () => {
+        const categoriesCollection = collection(db, categories);
+        getDocs(categoriesCollection)
+        .then((data) => {
+            const list = data.docs.map((cat) => {
+                return { ...cat.data(), id: cat.id };
+            });
+            setCategoriesList(list);
+        });
+    }
+
+    useEffect(() => {
+        getDocsAndSetCategories();
+    }, [])
+
     return (
         <>
             <nav>
                 <ul>
-                    {navLinks.map(link => <li key={link.id}><Link key={link.id} to={link.route}>{link.text}</Link></li>)}
+                    {categoriesList.map(categorie => <li key={categorie.id}><Link to={categorie.key === 'home'? '/' : (categorie.key === 'tracker'? 'tracker' : `category/${categorie.key}`)}>{categorie.title}</Link></li>)}
                 </ul>
             </nav>
         </>

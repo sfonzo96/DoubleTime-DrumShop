@@ -4,6 +4,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    &::before,
+    &::after {
+        box-sizing: border-box;
+    }
 }
 
 a { 
@@ -24,7 +29,9 @@ body {
     height: 100%;
     width: 100%;
     min-height: 100vh;
-    font-family: 'Didact Gothic', sans-serif;;
+    font-family: 'Didact Gothic', sans-serif;
+    display: flex;
+    flex-direction: column;
 }
 
 #root {

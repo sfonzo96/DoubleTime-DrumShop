@@ -1,8 +1,8 @@
-import { React, useState} from "react";
+import { React, useState, useEffect} from "react";
 import { useCartContext } from '../../context/CartContext'
 import { db, sales, products } from "../../firebase/firebase";
 import { addDoc, collection, serverTimestamp, doc, updateDoc } from "firebase/firestore";
-import { Link } from "react-router-dom";
+import { Link, redirect } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import './style.scss'
 import rockHand from '../../assets/rockHand.svg'
@@ -32,8 +32,7 @@ export function Checkout() {
             draggable: true,
             progress: undefined,
             theme: "dark",
-        }))
-        
+        })) 
     }
 
     const order = {
@@ -87,6 +86,13 @@ export function Checkout() {
             });
         }
     }
+
+
+
+    useEffect(() => {
+        if (cart.length === 0) redirect('/cart');
+        // eslint-disable-next-line
+    }, [cart])
 
     return (
         <>

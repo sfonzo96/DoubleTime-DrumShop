@@ -1,0 +1,6 @@
+@use '../../utils/abstractsStyling' as abs;
+
+.sizeSelector {
+    outline: .1rem solid abs.color('black-bg');
+    border: none;
+}

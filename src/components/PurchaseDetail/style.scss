@@ -59,3 +59,20 @@
     }
 }
 
+.missingPurchaseContainer {
+    padding: 5rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    font-size: 1.6rem;
+
+    span {
+        cursor: pointer;
+    }
+
+    img {
+        width: 20rem;
+    }
+}
+

@@ -14,3 +14,4 @@ const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 export const products = 'products';
 export const sales = 'sales';
+export const categories ='categories'

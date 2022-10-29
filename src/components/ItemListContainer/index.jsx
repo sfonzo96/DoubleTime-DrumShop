@@ -6,6 +6,7 @@ import { prettyNameFromType } from '../../utils/functions/prettyNameFromType';
 import { db, products } from "../../firebase/firebase";
 import { getDocs, collection, query, where } from "firebase/firestore";
 import './style.scss'
+import dbError from '../../assets/dberror.svg'
 
 export function ItemListContainer() {   
     
@@ -13,41 +14,55 @@ export function ItemListContainer() {
 
     const [productsList, setProductsList] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-
-    const getDocsAndSetList = (qry) => {
-        getDocs(qry)
-        .then((data) => {
-            const list = data.docs.map((product) => {
-                return { ...product.data(), id: product.id };
-            });
-            setProductsList(list);
-            setIsLoading(false);
-        });
-    }
+    const [error, setError] = useState(false)
     
     useEffect(() => {
-        const productCollection = collection(db, products);
-        if (typeId) {
-            const qryFilter = query(productCollection, where('type', '==', typeId));
-            getDocsAndSetList(qryFilter);
-        } else {
-            getDocsAndSetList(productCollection);
+        const getProducts = async () => {
+            try {
+                const productsCollection = collection(db, products);
+                const qry = typeId? query(productsCollection, where('type', '==', typeId)) : productsCollection;
+                await getDocs(qry)
+                .then((data) => {
+                    const list = data.docs.map((product) => {
+                        return { ...product.data(), id: product.id };
+                    });
+                    setProductsList(list);
+                });
+            } catch {
+                setError(true)
+            } finally {
+                setIsLoading(false);
+            }
         }
+
+        getProducts();
     }, [typeId]);
 
     return (
         <>  
-            <h1 className='listTitle'>
-                <span className="listTitleDeco"></span>
-                {prettyNameFromType(typeId).toUpperCase()}
-                <span className="listTitleDeco"></span>
-            </h1>
             {isLoading? 
                 <DotPulse size={40} speed={1.3} color="#111010"/>
-            :
-                <div className="itemListContainer">
-                    <ItemList productsList={productsList}/>
-                </div>
+            :   
+                <>
+                    {error?
+                        <div className='errorContainer'>
+                            <img src={dbError} alt="" />
+                            <p>Oops... Something happened when trying to collect data, please try again</p>
+                        </div>
+                        :
+
+                        <>
+                            <h1 className='listTitle'>
+                                <span className="listTitleStyle"></span>
+                                {prettyNameFromType(typeId).toUpperCase()}
+                                <span className="listTitleStyle"></span>
+                            </h1>
+                            <div className="itemListContainer">
+                                <ItemList productsList={productsList}/>
+                            </div>
+                        </>
+                    }
+                </>
            }
         </>
     )

@@ -15,10 +15,13 @@ export function CartProvider({children}) {
     const addProduct = (product, amount, size) => {
         if (isInCart(product.id)) {
             setCart(cart.map( prod => {
-                return prod.id === product.id ? {...prod, amount: prod.amount + amount, pickedSize: size} : prod // Solo permite elegir un tamaño, debería modificar id acorde al elegido :(
+                return prod.id === product.id ? {...prod, amount: prod.amount + amount, pickedSize: size} : prod;
             }));
         } else {
-            setCart([...cart, {...product, amount, pickedSize: size}]);
+            const newId = `${product.id}-${size}`
+            console.log(newId)
+            setCart([...cart, {...product, amount, pickedSize: size, [product.id]: newId }]);
+            console.log(cart)
         }
     }
 
