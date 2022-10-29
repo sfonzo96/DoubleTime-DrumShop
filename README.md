@@ -8,11 +8,11 @@ Este trabajo es parte del proyecto final del curso de React JS de Coderhouse.
 - Agrgar link una ves que se haya hecho un deploy
 
 ## Screenshots
-![Vista landing](./readmeassets/homePage.webp)
+![Vista landing](./readmeAssets/homePage.webp)
 
-![Vista de carrito](./readmeassets/cart.webp)
+![Vista de carrito](./readmeAssets/cart.webp)
 
-![Vista detalle de producto](./readmeassets/itemDetail.webp)
+![Vista detalle de producto](./readmeAssets/itemDetail.webp)
 
 ![Vista tracker](./readmeAssets/tracker.webp)
 
