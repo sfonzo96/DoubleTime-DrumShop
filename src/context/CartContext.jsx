@@ -19,14 +19,13 @@ export function CartProvider({children}) {
             }));
         } else {
             const newId = `${product.id}-${size}`
-            console.log(newId)
-            setCart([...cart, {...product, amount, pickedSize: size, [product.id]: newId }]);
-            console.log(cart)
+            setCart([...cart, {...product, amount, pickedSize: size, id: newId }]);
         }
     }
 
-    const productDeleted = (product) => {
-        toast.error(`${product.title} was deleted from cart`, {
+    const removeProduct = (id,productToDelete) => {
+        setCart(cart.filter(product => product.id !== id));
+        toast.error(`${productToDelete.title} was deleted from cart`, {
             position: "top-right",
             autoClose: 5000,
             hideProgressBar: false,
@@ -36,18 +35,11 @@ export function CartProvider({children}) {
             progress: undefined,
             theme: "dark",
         });
-    }
-
-    const removeProduct = (id,productToDelete) => {
-        productDeleted(productToDelete);
-        setCart(cart.filter(product => product.id !== id));
     };
     
     const [totalAmount, setTotalAmount] = useState(0);
 
-    const clearCart = () => {
-        setCart([]);
-    }
+    const clearCart = () => setCart([]);
 
     useEffect(() => {
         localStorage.setItem("CART", JSON.stringify(cart));
