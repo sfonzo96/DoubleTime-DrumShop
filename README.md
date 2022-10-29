@@ -66,7 +66,6 @@ Ante sugerencias o recomendaciones podés comunicarte conmigo mediante LinkedIn:
 Finalizado, con detalles pendientes que no afectan funcionalidades.
 
 ## Authors
-
 - [@sfonzo96](https://github.com/sfonzo96/)
 
 
