@@ -26,7 +26,7 @@ export function ItemListContainer() {
                     const list = data.docs.map((product) => {
                         return { ...product.data(), id: product.id };
                     });
-                    setProductsList(list);
+                    qry === productsCollection? setProductsList(list.slice(0,6)) : setProductsList(list);
                 });
             } catch {
                 setError(true)

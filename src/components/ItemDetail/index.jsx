@@ -2,7 +2,7 @@ import {React, useState} from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import { ItemCounter} from '../ItemCounter';
 import { useCartContext } from '../../context/CartContext';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import { SizeSelector } from '../SizeSelector';
 import 'react-toastify/dist/ReactToastify.css';
 import './style.scss'
@@ -20,23 +20,9 @@ export function ItemDetail({product}) {
         setSize(value);
     }
 
-    const productAdded = (product, amount, size) => {
-        toast.success(`${amount}x ${size}" ${product.title} was added to the cart`, {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "dark",
-        });
-    }
-
     const onAdd = (product, amount, size) => {
         setProductWasAdded(true);
         addProduct(product, amount, size);
-        productAdded(product, amount, size);
     }
     
     return (

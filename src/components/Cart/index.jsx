@@ -65,7 +65,6 @@ export function Cart() {
 
     useEffect(() => {
         verifyAvailability();
-        console.log(cart)
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [gettingData, cart])
 

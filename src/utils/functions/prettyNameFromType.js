@@ -9,6 +9,6 @@ export function prettyNameFromType(typeId) {
         case 'fxcymbs':
             return 'FX Cymbals';
         default:
-            return 'All products';
+            return 'Featured products';
     }
 }
