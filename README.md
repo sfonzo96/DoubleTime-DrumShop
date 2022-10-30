@@ -5,7 +5,7 @@ La idea tras el proyecto es desarrollar un e-commerce con un formato SPA (single
 Este trabajo es parte del proyecto final del curso de React JS de Coderhouse.
 
 ## Enlace al sitio activo
-- Agrgar link una ves que se haya hecho un deploy
+- https://doubletime-drumshop.netlify.app/
 
 ## Screenshots
 ![Vista landing](./readmeAssets/homePage.webp)
