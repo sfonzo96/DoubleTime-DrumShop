@@ -60,7 +60,7 @@ Detener servidor
 ```bash
   ctrl + c
 ```
-## Authors
+## Autor
 - [Santiago Fonzo](https://www.linkedin.com/in/santiagofonzo/)
 
 ## Licencia
