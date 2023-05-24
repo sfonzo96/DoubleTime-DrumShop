@@ -36,14 +36,8 @@ Este trabajo es parte del proyecto final del curso de React JS de Coderhouse.
 ## Roadmap
 - Modificar estilos para dar cualidad responsive al sitio (actualmente NO lo es)
 
-## Feedback
-Ante sugerencias o recomendaciones podés comunicarte conmigo mediante LinkedIn: https://www.linkedin.com/in/santiagofonzo/
-
 ## Estado del proyecto
 Finalizado, con detalles pendientes que no afectan funcionalidades.
-
-## Authors
-- [@sfonzo96](https://github.com/sfonzo96/)
 
 ## Instalación
 Clonado del repositorio de manera local
@@ -66,5 +60,9 @@ Detener servidor
 ```bash
   ctrl + c
 ```
+## Authors
+- [Santiago Fonzo](https://www.linkedin.com/in/santiagofonzo/)
 
+## Licencia
 
+Este proyecto está licenciado bajo la [Licencia MIT](LICENSE).
